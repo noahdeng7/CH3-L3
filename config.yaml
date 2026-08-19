@@ -1,0 +1,17 @@
+project: CH3-L3
+run_name: Random-Regrowth
+
+#TRAINING
+epochs: 50          # paper runs 250; ANP stabilises by ~50
+lr: 0.01            # paper's sensitivity tests; low lr traps regrown links below the prune threshold
+batch_size: 64
+hidden: 1000        # SET/ESML MLP hidden dimension
+seed: 0             # run 3 seeds per arm
+
+#TOPOLOGY
+model: Sparse       # Baseline, Sparse
+sparsity: 99        # percentage of links removed; the paper's regime is 99 (1% density)
+zeta: 0.3           # fraction of surviving links rewired per round, independent of sparsity
+scorer: random         # ch3 (CH3-L3), ra (RA/CH2-L3 ablation), random (SET)
+init: er            # er (isolates the regrowth rule) or csti (CHT step 1)
+early_stop: 0.9     # freeze a layer once this fraction of removed links is re-added
