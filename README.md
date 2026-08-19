@@ -22,5 +22,4 @@ Then, configure config.yaml to run what specific test you want, and then run tra
 `create_masks.py` - sparse mask generation
 `train.py` - data loading, training loop, and wandb logging
 `config.yaml` - all hyperparameters and model details
-`sweep.py` - multi-seed CH3-L3 vs SET ablation and the aggregate plot
 
